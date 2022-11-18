@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PowerApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PowerApp"
+    xmlns:views="clr-namespace:PowerApp.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent
+        Title="Home"
+        Icon="home.png"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="HomePage" />
+
+        <ShellContent
+        Title="Tips"
+        Icon="light.png"
+        ContentTemplate="{DataTemplate views:TipsPage}" />
+
+        <ShellContent
+        Title="Verbruik"
+        Icon="chart.png"
+        ContentTemplate="{DataTemplate views:VerbruikPage}"
+        Route="VerbruikPage" />
+
+    </TabBar>
+</Shell>

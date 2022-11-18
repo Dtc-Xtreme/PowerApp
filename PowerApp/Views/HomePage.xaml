@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PowerApp.Views.HomePage"
+             xmlns:con="clr-namespace:PowerApp.Converters"
+             Title="Home">
+    <ContentPage.Resources>
+        <con:FlipBoleanConverter x:Key="FlipBool"/>
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding Test, Mode=TwoWay}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Image 
+            Source="happy.png"
+            HeightRequest="50"
+            IsVisible="{Binding IsSmiling}"/>
+        
+        <Image
+            Source="sad.png"
+            HeightRequest="50"
+            IsVisible="{Binding IsSmiling, Converter={StaticResource FlipBool}}"/>
+        
+        <Label
+            Text="{Binding Number, StringFormat='Je hebt {0} kW/h verbruikt.'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+    </VerticalStackLayout>
+</ContentPage>
