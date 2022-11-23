@@ -29,7 +29,7 @@ namespace PowerApp.Models
 
         public override string ToString()
         {
-            return this.liters + " liters " + "(" + label + ")";
+            return this.liters + " liter " + "(" + label + ")";
         }
 
         // We use these getters for displaying in the View

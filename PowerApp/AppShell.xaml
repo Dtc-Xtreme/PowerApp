@@ -11,8 +11,7 @@
         <ShellContent
             Title="Home"
             Icon="home.png"
-            ContentTemplate="{DataTemplate views:HomePage}"
-            Route="HomePage" />
+            ContentTemplate="{DataTemplate views:HomePage}"/>
 
         <ShellContent
             Title="Tips"
@@ -23,17 +22,14 @@
             <ShellContent
                 Title="Electriciteit"
                 Icon="elec.png"
-                Route="verbruik/electriciteit"
                 ContentTemplate="{DataTemplate views:VerbruikElectriciteitPage}" />
             <ShellContent
                 Title="Water"
                 Icon="water.png"
-                Route="verbruik/water"
                 ContentTemplate="{DataTemplate views:VerbruikWaterPage}" />
             <ShellContent
                 Title="Gas"
                 Icon="gas.png"
-                Route="verbruik/gas"
                 ContentTemplate="{DataTemplate views:VerbruikGasPage}" />
         </Tab>
     </TabBar>

@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PowerApp.Models;
+using PowerApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,30 @@ namespace PowerApp.ViewModels
     {
         [ObservableProperty]
         private List<Electriciteit> list;
+
+        private Electriciteit selectedItem;
+
+        public Electriciteit SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                if (value != null)
+                {
+                    SetProperty(ref selectedItem, value);
+                    Navigate();
+                }
+            }
+        }
+
+        private async void Navigate()
+        {
+            var args = new Dictionary<string, object>
+            {
+                {"SelectedElectricity", SelectedItem}
+            };
+            await Shell.Current.GoToAsync(nameof(HomePage), args);
+        }
 
         public VerbruikElectriciteitViewModel()
         {
@@ -30,11 +55,6 @@ namespace PowerApp.ViewModels
                 new Electriciteit(11,850,"November"),
                 new Electriciteit(12,0,"December")
             };
-        }
-
-        public void GaNaarWebPagina()
-        {
-            
         }
     }
 }

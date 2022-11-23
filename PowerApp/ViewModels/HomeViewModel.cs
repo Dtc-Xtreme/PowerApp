@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace PowerApp.ViewModels
 {
+    [QueryProperty(nameof(SelectedElectricity), "SelectedElectricity")]
+    [QueryProperty(nameof(SelectedWater), "SelectedWater")]
+    [QueryProperty(nameof(SelectedGas), "SelectedGas")]
     public partial class HomeViewModel : BaseViewModel
     {
         private VerbruikElectriciteitViewModel electricityVM;

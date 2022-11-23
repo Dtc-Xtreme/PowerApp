@@ -4,6 +4,6 @@
              x:Class="PowerApp.Views.VerbruikWaterPage"
              Title="Verbruik">
     <VerticalStackLayout>
-        <ListView ItemsSource="{Binding List}"/>
+        <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem}" />
     </VerticalStackLayout>
 </ContentPage>

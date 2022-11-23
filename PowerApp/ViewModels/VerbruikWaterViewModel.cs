@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PowerApp.Models;
+using PowerApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,21 @@ namespace PowerApp.ViewModels
     {
         [ObservableProperty]
         private List<Water> list;
+
+        private Water selectedItem;
+
+        public Water SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                if (value != null)
+                {
+                    SetProperty(ref selectedItem, value);
+                    Navigate();
+                }
+            }
+        }
 
         public VerbruikWaterViewModel()
         {
@@ -30,6 +46,15 @@ namespace PowerApp.ViewModels
                 new Water(11,4541,"November"),
                 new Water(12,0,"December")
             };
+        }
+
+        private async void Navigate()
+        {
+            var args = new Dictionary<string, object>
+            {
+                {"SelectedWater", SelectedItem}
+            };
+            await Shell.Current.GoToAsync(nameof(HomePage), args);
         }
     }
 }

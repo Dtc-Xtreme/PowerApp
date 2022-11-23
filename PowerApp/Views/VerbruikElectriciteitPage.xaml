@@ -4,7 +4,6 @@
              x:Class="PowerApp.Views.VerbruikElectriciteitPage"
              Title="Verbruik">
     <VerticalStackLayout>
-        <ListView ItemsSource="{Binding List}">
-        </ListView>
+        <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem}" />
     </VerticalStackLayout>
 </ContentPage>
