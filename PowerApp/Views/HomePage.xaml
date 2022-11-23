@@ -7,26 +7,163 @@
     <ContentPage.Resources>
         <con:FlipBoleanConverter x:Key="FlipBool"/>
     </ContentPage.Resources>
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="{Binding Test, Mode=TwoWay}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Image 
-            Source="happy.png"
-            HeightRequest="50"
-            IsVisible="{Binding IsSmiling}"/>
-        
-        <Image
-            Source="sad.png"
-            HeightRequest="50"
-            IsVisible="{Binding IsSmiling, Converter={StaticResource FlipBool}}"/>
-        
-        <Label
-            Text="{Binding Number, StringFormat='Je hebt {0} kW/h verbruikt.'}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        
-    </VerticalStackLayout>
+
+    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Margin="10">
+        <!--<Border BackgroundColor="{Binding BackgroundColorKwh}" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Margin="10">
+                <Label 
+                FontSize="20"
+                FontAttributes="Bold"
+                Text="Electriciteit en Gas"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Padding="10"/>
+                
+                <Image 
+                Source="happy.png"
+                HeightRequest="50"
+                IsVisible="{Binding IsSmilingKwh}"/>
+
+                <Image
+                Source="sad.png"
+                HeightRequest="50"
+                IsVisible="{Binding IsSmilingKwh, Converter={StaticResource FlipBool}}"/>
+
+                <Label
+                Text="{Binding TotalKwh, StringFormat='Je hebt {0} kW/h verbruikt.'}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="10"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border BackgroundColor="{Binding BackgroundColorLiters}" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Margin="10">
+                <Label 
+                FontSize="20"
+                FontAttributes="Bold"
+                Text="Water"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Padding="10"/>
+
+                <Image 
+                Source="happy.png"
+                HeightRequest="50"
+                IsVisible="{Binding IsSmilingLiters}"/>
+
+                <Image
+                Source="sad.png"
+                HeightRequest="50"
+                IsVisible="{Binding IsSmilingLiters, Converter={StaticResource FlipBool}}"/>
+
+                <Label
+                Text="{Binding TotalLiters, StringFormat='Je hebt {0} liter verbruikt in.'}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="10"/>
+            </VerticalStackLayout>
+        </Border>-->
+
+        <Border BackgroundColor="{Binding SelectedElectricity.GetColor}" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Margin="10">
+                <Label 
+                FontSize="20"
+                FontAttributes="Bold"
+                Text="Electriciteit"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Padding="10"/>
+
+                <Image 
+                Source="happy.png"
+                HeightRequest="50"
+                IsVisible="{Binding SelectedElectricity.IsGood}"/>
+
+                <Image
+                Source="sad.png"
+                HeightRequest="50"
+                IsVisible="{Binding SelectedElectricity.IsGood, Converter={StaticResource FlipBool}}"/>
+
+                <Label
+                Text="{Binding SelectedElectricity.PrintLine}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="10"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border BackgroundColor="{Binding SelectedGas.GetColor}" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Margin="10">
+                <Label 
+                FontSize="20"
+                FontAttributes="Bold"
+                Text="Gas"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Padding="10"/>
+
+                <Image 
+                Source="happy.png"
+                HeightRequest="50"
+                IsVisible="{Binding SelectedGas.IsGood}"/>
+
+                <Image
+                Source="sad.png"
+                HeightRequest="50"
+                IsVisible="{Binding SelectedGas.IsGood, Converter={StaticResource FlipBool}}"/>
+
+                <Label
+                Text="{Binding SelectedGas.PrintLine}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="10"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border BackgroundColor="{Binding SelectedWater.GetColor}" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Margin="10">
+                <Label 
+                FontSize="20"
+                FontAttributes="Bold"
+                Text="Water"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Padding="10"/>
+
+                <Image 
+                Source="happy.png"
+                HeightRequest="50"
+                IsVisible="{Binding SelectedWater.IsGood}"/>
+
+                <Image
+                Source="sad.png"
+                HeightRequest="50"
+                IsVisible="{Binding SelectedWater.IsGood, Converter={StaticResource FlipBool}}"/>
+
+                <Label
+                Text="{Binding SelectedWater.PrintLine}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="10"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <Button Command="{Binding ToggleCommand}" Text="Toggle" VerticalOptions="EndAndExpand"/>
+    </StackLayout>
 </ContentPage>

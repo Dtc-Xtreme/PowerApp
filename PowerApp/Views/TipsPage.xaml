@@ -32,6 +32,23 @@
                 </Label>
             </StackLayout>
 
+            <StackLayout Margin="10">
+                <Label
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center">
+                    2. Geef een naam aan je spaarrekening
+                </Label>
+
+                <Label>
+                    asdfasdfgt niet zoveel. Eigenlijk maar gewoon wat getallen op je bankrekening. Maar een spaarrekening met de naam “Vakantie Bali” zegt dan wel weer een hoop.
+                </Label>
+
+                <Label>
+                    Door je spaarrekening een naam te geven word je elke keer herinnerd aan je spaardoel. En het maakt het ook nog eens een stuk lastiger om geld van je spaarrekening af te halen! 20 euro van “Spaarrekening” afhalen is niet zo’n probleem. 20 euro van “Vakantie Bali” afhalen betekent drie cocktails minder tijdens je vakantie. Door deze kleine aanpassing help je jezelf herinneren aan je doel. Waarvoor ben je nou écht aan het sparen?
+                </Label>
+            </StackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

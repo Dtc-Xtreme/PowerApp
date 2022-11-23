@@ -22,8 +22,12 @@ public static class MauiProgram
         builder.Services.AddTransient<HomeViewModel>();
         builder.Services.AddTransient<TipsPage>();
         builder.Services.AddTransient<TipsViewModel>();
-        builder.Services.AddTransient<VerbruikPage>();
-        builder.Services.AddTransient<VerbruikViewModel>();
+        builder.Services.AddTransient<VerbruikElectriciteitPage>();
+        builder.Services.AddSingleton<VerbruikElectriciteitViewModel>();
+        builder.Services.AddTransient<VerbruikGasPage>();
+        builder.Services.AddSingleton<VerbruikGasViewModel>();
+        builder.Services.AddTransient<VerbruikWaterPage>();
+        builder.Services.AddSingleton<VerbruikWaterViewModel>();
 
         return builder.Build();
 	}

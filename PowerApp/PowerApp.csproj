@@ -32,10 +32,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.jpg" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\logo.jpg" Color="#090d1b" BaseSize="450,450" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -49,7 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
+	  <None Remove="Resources\Images\happy.png" />
+	  <None Remove="Resources\Images\sad.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -57,8 +58,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\VerbruikPage.xaml.cs">
-	    <DependentUpon>VerbruikPage.xaml</DependentUpon>
+	  <Compile Update="Views\VerbruikElectriciteitPage.xaml.cs">
+	    <DependentUpon>VerbruikElectriciteitPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\VerbruikWaterPage.xaml.cs">
+	    <DependentUpon>VerbruikWaterPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\VerbruikGasPage.xaml.cs">
+	    <DependentUpon>VerbruikGasPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -66,7 +73,13 @@
 	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\VerbruikPage.xaml">
+	  <MauiXaml Update="Views\VerbruikElectriciteitPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VerbruikWaterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VerbruikGasPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TipsPage.xaml">

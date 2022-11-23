@@ -2,9 +2,9 @@ using PowerApp.ViewModels;
 
 namespace PowerApp.Views;
 
-public partial class VerbruikPage : ContentPage
+public partial class VerbruikGasPage : ContentPage
 {
-	public VerbruikPage(VerbruikViewModel vm)
+	public VerbruikGasPage(VerbruikGasViewModel vm)
 	{
         BindingContext = vm;
         InitializeComponent();
