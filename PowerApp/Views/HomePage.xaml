@@ -102,6 +102,6 @@
             </VerticalStackLayout>
         </Border>
 
-        <Button Command="{Binding ToggleCommand}" Text="Toggle" VerticalOptions="EndAndExpand"/>
+        <!--<Button Command="{Binding ToggleCommand}" Text="Toggle" VerticalOptions="EndAndExpand"/>-->
     </StackLayout>
 </ContentPage>
