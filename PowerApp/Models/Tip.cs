@@ -17,5 +17,21 @@ namespace PowerApp.Models
 
         [ObservableProperty]
         private string text;
+
+        [ObservableProperty]
+        private string image;
+
+        public Tip()
+        {
+
+        }
+
+        public Tip(int id, string title, string text, string image = null)
+        {
+            this.id = id;
+            this.title = title;
+            this.text = text;
+            this.image = image;
+        }
     }
 }
